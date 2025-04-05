@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ألعاب الرعب والمكافآت المخيفة!</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #8a2be2; /* Purple */
+            --danger: #ff3860; /* Pinkish red */
+            --success: #00d1b2; /* Teal */
+            --warning: #ffdd57; /* Yellow */
+            --dark: #1a0033; /* Dark purple */
+            --text-light: #f8f8ff; /* Ghost white */
+            --text-dark: #333;
+            --border-radius: 15px;
+            --box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #0a001a;
+            color: var(--text-light);
+            background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-attachment: fixed;
+            background-size: cover;
+            min-height: 100vh;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--danger);
+            text-shadow: 0 0 5px rgba(255, 56, 96, 0.5);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--warning);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(to left, var(--primary), #9b30ff);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(138, 43, 226, 0.5);
+            border-bottom: 2px solid var(--danger);
+            position: relative;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-left: 15px;
+            filter: drop-shadow(0 0 5px var(--danger));
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            text-shadow: 0 0 5px var(--primary);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        nav a:hover {
+            color: var(--danger);
+            text-shadow: 0 0 10px var(--danger);
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(138, 43, 226, 0.5)), 
+                        url('https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: var(--border-radius);
+            border: 2px solid var(--danger);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary); }
+            to { text-shadow: 0 0 15px var(--danger), 0 0 30px var(--danger); }
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(to right, var(--danger), var(--primary));
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            border: 1px solid #fff;
+            box-shadow: 0 0 15px rgba(255, 56, 96, 0.5);
+            text-shadow: 0 0 5px #000;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(255, 56, 96, 0.8);
+            background: linear-gradient(to right, var(--primary), var(--danger));
+        }
+        
+        .btn-danger {
+            background: linear-gradient(to right, var(--danger), #cc0066);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(to right, var(--warning), #ffb347);
+        }
+        
+        .btn-success {
+            background: linear-gradient(to right, var(--success), #00a79d);
+        }
+        
+        /* Offers Grid */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .offer-card {
+            background: rgba(26, 0, 51, 0.8);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 1px solid var(--primary);
+        }
+        
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(138, 43, 226, 0.7);
+            border-color: var(--danger);
+        }
+        
+        .offer-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .offer-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(26, 0, 51, 0.9));
+        }
+        
+        .offer-content {
+            padding: 20px;
+        }
+        
+        /* Tags */
+        .tag {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 0 3px #000;
+        }
+        
+        .tag-hot {
+            background-color: var(--danger);
+            box-shadow: 0 0 10px var(--danger);
+        }
+        
+        .tag-new {
+            background-color: var(--success);
+            color: #002200;
+            box-shadow: 0 0 10px var(--success);
+        }
+        
+        .timer {
+            color: var(--danger);
+            font-weight: bold;
+            text-shadow: 0 0 5px var(--danger);
+        }
+        
+        /* Login Section */
+        .login-section {
+            background: rgba(26, 0, 51, 0.8);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            max-width: 500px;
+            margin: 40px auto;
+            border: 1px solid var(--primary);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--primary);
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: var(--danger);
+            box-shadow: 0 0 10px rgba(255, 56, 96, 0.5);
+        }
+        
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .security-warning {
+            font-size: 0.9rem;
+            color: #ff6b6b;
+            text-align: center;
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid var(--danger);
+            text-shadow: 0 0 3px #000;
+        }
+        
+        /* Comments Section */
+        .comments-section {
+            background: rgba(26, 0, 51, 0.8);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            margin: 40px 0;
+            border: 1px solid var(--primary);
+        }
+        
+        .comment {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+        }
+        
+        .comment:last-child {
+            border-bottom: none;
+        }
+        
+        .comment-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(138, 43, 226, 0.3);
+            margin-left: 15px;
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .comment-content {
+            flex-grow: 1;
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .comment-author {
+            font-weight: bold;
+        }
+        
+        .comment-time {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .comment-actions a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 15px;
+            transition: var(--transition);
+        }
+        
+        .comment-actions a:hover {
+            color: var(--danger);
+        }
+        
+        /* Spooky Elements */
+        .spooky-corner {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            background: url('https://www.freepnglogos.com/uploads/spider-png/spider-png-transparent-spider-images-pluspng-18.png') no-repeat;
+            background-size: contain;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .spooky-corner.top-right {
+            top: 0;
+            right: 0;
+        }
+        
+        .spooky-corner.bottom-left {
+            bottom: 0;
+            left: 0;
+            transform: rotate(180deg);
+        }
+        
+        .bat {
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            background: url('https://www.freepnglogos.com/uploads/bat-png/bat-png-transparent-bat-images-pluspng-7.png') no-repeat;
+            background-size: contain;
+            animation: fly 15s linear infinite;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+        @keyframes fly {
+            0% { transform: translate(-100px, 100px); }
+            100% { transform: translate(calc(100vw + 100px), -100px); }
+        }
+        
+        /* Trap Tracker */
+        .trap-tracker {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(26, 0, 51, 0.9);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            z-index: 100;
+            border: 1px solid var(--primary);
+            max-width: 250px;
+        }
+        
+        .trap-found {
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: #2a0f00;
+            border-radius: var(--border-radius);
+            max-width: 500px;
+            width: 90%;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            animation: modalAppear 0.3s;
+            border: 2px solid var(--danger);
+            box-shadow: 0 0 30px rgba(255, 56, 96, 0.7);
+        }
+        
+        @keyframes modalAppear {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #aaa;
+            background: rgba(255,255,255,0.1);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            color: white;
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .progress-bar {
+            height: 20px;
+            background: #440000;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+            border: 1px solid var(--danger);
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--danger), var(--primary));
+            width: 0%;
+            transition: width 1s;
+        }
+        
+        /* Virus Scan Screen */
+        .virus-scan {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1a0000;
+            color: var(--danger);
+            z-index: 1001;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+            text-shadow: 0 0 5px var(--danger);
+        }
+        
+        .scan-progress {
+            width: 80%;
+            height: 30px;
+            background-color: #440000;
+            border: 1px solid var(--danger);
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .scan-progress-bar {
+            height: 100%;
+            background-color: var(--danger);
+            width: 0%;
+        }
+        
+        .scan-message {
+            margin: 10px 0;
+        }
+        
+        .infected-file {
+            color: var(--danger);
+            margin: 5px 0;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(26, 0, 51, 0.9);
+            color: #aaa;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 2px solid var(--primary);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: var(--danger);
+            text-shadow: 0 0 5px var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(138, 43, 226, 0.3);
+            font-size: 0.9rem;
+        }
+        
+        /* Hidden Traps */
+        .hidden-trap {
+            position: fixed;
+            background-color: var(--danger);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            display: none;
+            z-index: 100;
+            border: 1px solid white;
+            right: 20px;
+            bottom: 20px;
+            width: auto;
+            max-width: 300px;
+        }
+        
+        .fake-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 15px;
+            max-width: 300px;
+            display: none;
+            z-index: 100;
+            cursor: pointer;
+            border: 2px solid var(--danger);
+        }
+        
+        .fake-notification-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .fake-notification-icon {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            background-color: var(--danger);
+            border-radius: 50%;
+        }
+        
+        .fake-notification-title {
+            font-weight: bold;
+            flex-grow: 1;
+        }
+        
+        .fake-notification-close {
+            color: #999;
+            cursor: pointer;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .offers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trap-tracker {
+                position: static;
+                max-width: 100%;
+                margin: 20px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                height: 300px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+            
+            .modal-content {
+                padding: 20px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Spooky decorative elements remain the same -->
+    <div class="spooky-corner top-right"></div>
+    <div class="spooky-corner bottom-left"></div>
+    <div class="bat"></div>
+    <div class="bat"></div>
+    
+    <!-- Trap tracker remains the same -->
+    <div class="trap-tracker">
+        <h3>المخاطر الأمنية المكتشفة: <span id="foundTraps">0</span>/12</h3>
+        <div id="trapList"></div>
+    </div>
+    
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://www.freepnglogos.com/uploads/skull-png/skull-png-transparent-image-pngpix-0.png" alt="ألعاب الفيديو">
+                عالم الألعاب الممتعة
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">ألعاب الفيديو</a></li>
+                    <li><a href="#">تحديات الألعاب</a></li>
+                    <li><a href="#">منافسات</a></li>
+                    <li><a href="#">الدعم</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h1>ألعاب رائعة وجوائز قيمة!</h1>
+            <p>انضم إلى تحدياتنا الممتعة واربح جوائز لا تصدق!</p>
+            <a href="#" class="btn" id="mainCta">سجل الآن!</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2 style="color: #ff00aa; text-shadow: 0 0 10px #ff00aa; font-size: 36px;">أحدث التحديات</h2>
+        <div class="offers-grid">
+            <!-- Updated to realistic game offers -->
+            <!-- Trap 1: Fake Game Mod -->
+            <div class="offer-card" id="robuxOffer">
+                <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="offer-content">
+                    <span class="tag tag-hot">جديد!</span>
+                    <span class="tag">حصري</span>
+                    <span class="timer">ينتهي قريبًا!</span>
+                    <h3>تعديل خاص للعبة Roblox</h3>
+                    <p>احصل على شخصيات جديدة وميزات حصرية! تحميل مجاني لفترة محدودة!</p>
+                    <button class="btn btn-danger">تحميل الآن</button>
+                </div>
+            </div>
+            
+            <!-- Trap 2: Fake Game Giveaway -->
+            <div class="offer-card" id="iphoneOffer">
+                <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="offer-content">
+                    <span class="tag tag-hot">مسابقة</span>
+                    <h3>اربح لعبة Minecraft كاملة!</h3>
+                    <p>كن من أوائل 10 مشتركين واربح اللعبة الكاملة مجانًا!</p>
+                    <button class="btn btn-warning">المطالبة بالجائزة</button>
+                </div>
+            </div>
+            
+            <!-- Trap 3: Fake Game Mod -->
+            <div class="offer-card" id="minecraftOffer">
+                <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="offer-content">
+                    <span class="tag">تعديل</span>
+                    <h3>تعديل خاص للعبة Among Us</h3>
+                    <p>مزيد من الشخصيات والأزياء الحصرية! هل تريد تجربتها؟</p>
+                    <button class="btn btn-success">تحميل الآن</button>
+                </div>
+            </div>
+            
+            <!-- Trap 4: Fake Game Mod -->
+            <div class="offer-card" id="giftcardOffer">
+                <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1606166325681-5ae6e85fc9ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="offer-content">
+                    <span class="tag tag-hot">جديد</span>
+                    <h3>تعديل خاص للعبة Fortnite</h3>
+                    <p>شخصيات جديدة وأزياء حصرية! تحميل مجاني الآن!</p>
+                    <button class="btn btn-danger">تحميل التعديل</button>
+                </div>
+            </div>
+            
+            <!-- Trap 5: Fake VPN -->
+            <div class="offer-card" id="vpnOffer">
+                <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="offer-content">
+                    <span class="tag">راعي</span>
+                    <h3>VPN للألعاب</h3>
+                    <p>الوصول إلى ألعاب حصرية! مجانًا لفترة محدودة!</p>
+                    <button class="btn">تحميل VPN</button>
+                </div>
+            </div>
+            
+            <!-- Trap 6: Fake Game Cheat -->
+            <div class="offer-card" id="cheatOffer">
+                <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="offer-content">
+                    <span class="tag">غير محدود</span>
+                    <h3>هاك للعبة Brawl Stars</h3>
+                    <p>هاك يمنحك أحجارًا غير محدودة في اللعبة! لا يمكن اكتشافه!</p>
+                    <button class="btn btn-warning">تحميل الهاك</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Trap 7: Fake Login Section -->
+        <div class="login-section" id="loginSection">
+            <h2>تسجيل الدخول للعضوية</h2>
+            <p>سجل الدخول للوصول إلى جوائزك والمحتوى الحصري</p>
+            
+            <div class="form-group">
+                <label for="username">اسم المستخدم أو البريد الإلكتروني</label>
+                <input type="text" id="username" placeholder="أدخل اسم المستخدم أو البريد الإلكتروني">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" id="password" placeholder="أدخل كلمة المرور">
+            </div>
+            
+            <div class="remember-forgot">
+                <div>
+                    <input type="checkbox" id="remember">
+                    <label for="remember">تذكرني</label>
+                </div>
+                <a href="#">نسيت كلمة المرور؟</a>
+            </div>
+            
+            <button class="btn" id="loginBtn">تسجيل الدخول</button>
+            
+            <p style="text-align: center; margin-top: 20px;">ليس لديك حساب؟ <a href="#">سجل هنا</a></p>
+            
+            <div class="security-warning">
+                <i>⚠️ هذا الاتصال غير آمن. لا تدخل كلمات مرور حقيقية في هذه الصفحة.</i>
+            </div>
+        </div>
+        
+        <!-- Trap 8: Fake Comments Section with Cyberbullying -->
+        <div class="comments-section">
+            <h2>تعليقات المجتمع</h2>
+            
+            <div class="comment" id="badComment">
+                <div class="comment-avatar" style="background-image: url('https://via.placeholder.com/50x50');"></div>
+                <div class="comment-content">
+                    <div class="comment-header">
+                        <span class="comment-author">ProGamer123</span>
+                        <span class="comment-time">منذ دقيقتين</span>
+                    </div>
+                    <div class="comment-text">
+                        LOL يا فاشل! أنت سيء جدًا في هذه اللعبة. أراهن أنك تستخدم هاكات! يا جماعة بلغوا عن هذا المخادع!
+                    </div>
+                    <div class="comment-actions">
+                        <a href="#" class="reply-link">رد</a>
+                        <a href="#" class="report-link">تبليغ</a>
+                        <a href="#" class="block-link">حظر</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comment">
+                <div class="comment-avatar" style="background-image: url('https://via.placeholder.com/50x50');"></div>
+                <div class="comment-content">
+                    <div class="comment-header">
+                        <span class="comment-author">GameFan99</span>
+                        <span class="comment-time">منذ 15 دقيقة</span>
+                    </div>
+                    <div class="comment-text">
+                        هل جرب أحد التعديل الجديد؟ لقد حذرني مضاد الفيروسات أنه خطير...
+                    </div>
+                    <div class="comment-actions">
+                        <a href="#" class="reply-link">رد</a>
+                        <a href="#" class="report-link">تبليغ</a>
+                        <a href="#" class="block-link">حظر</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comment">
+                <div class="comment-avatar" style="background-image: url('https://via.placeholder.com/50x50');"></div>
+                <div class="comment-content">
+                    <div class="comment-header">
+                        <span class="comment-author">TechHelper</span>
+                        <span class="comment-time">منذ ساعة</span>
+                    </div>
+                    <div class="comment-text">
+                        فقط عطل مضاد الفيروسات! كل التعديلات الجيدة يتم الإبلاغ عنها لأن شركات الألعاب لا تريدك أن تستمتع!
+                    </div>
+                    <div class="comment-actions">
+                        <a href="#" class="reply-link">رد</a>
+                        <a href="#" class="report-link">تبليغ</a>
+                        <a href="#" class="block-link">حظر</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hidden Trap 9: Fake Notification -->
+    <div class="fake-notification" id="fakeNotification">
+        <div class="fake-notification-header">
+            <div class="fake-notification-icon"></div>
+            <div class="fake-notification-title">تنبيه أمان</div>
+            <div class="fake-notification-close">×</div>
+        </div>
+        <div class="fake-notification-content">
+            تم اكتشاف 3 فيروسات على جهازك! انقر هنا للتنظيف الآن!
+        </div>
+    </div>
+    
+    <!-- Hidden Trap 10: Fake Chat Request -->
+    <div class="hidden-trap" id="chatRequest">
+        <strong>سارة (13):</strong> مرحبا! تريد أن نلعب معًا؟ انقر للدردشة!
+    </div>
+    
+    <!-- Hidden Trap 11: Fake Ad with Malware -->
+    <div class="hidden-trap" id="malwareAd" style="left: 20px; right: auto; width: 300px;">
+        <strong>إعلان:</strong> هاتفك بطيء؟ انقر هنا لتسريعه الآن!
+    </div>
+    
+    <!-- Hidden Trap 12: Fake Friend Request -->
+    <div class="hidden-trap" id="friendRequest" style="bottom: 70px; background-color: #0984e3;">
+        <strong>لديك طلب صداقة جديد من "علي" (12)</strong>
+    </div>
+    
+    <!-- Modal: Virus Alert -->
+    <div class="modal" id="virusModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>⚠️ تم اكتشاف فيروس!</h2>
+            <p>الملف الذي قمت بتحميله يحتوي على برنامج ضار!</p>
+            <p>قد يقوم بسرقة معلوماتك الشخصية أو إتلاف جهازك!</p>
+            <div class="progress-bar">
+                <div class="progress" id="virusProgress"></div>
+            </div>
+            <p>يتطلب إجراء فوري!</p>
+            <button class="btn btn-danger" id="fixVirusBtn">الإصلاح الآن</button>
+        </div>
+    </div>
+    
+    <!-- Modal: Password Stolen -->
+    <div class="modal" id="passwordModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>🔓 كلمة المرور مسروقة!</h2>
+            <p>لقد أدخلت كلمة المرور الخاصة بك في موقع غير آمن (HTTP)!</p>
+            <p>يمكن للمتسللين الآن الوصول إلى حسابك!</p>
+            <p>ابحث دائمًا عن <strong>HTTPS</strong> ورمز <strong>🔒 القفل</strong> قبل تسجيل الدخول!</p>
+            <button class="btn">فهمت</button>
+        </div>
+    </div>
+    
+    <!-- Modal: Phishing Scam -->
+    <div class="modal" id="phishingModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>🎣 عملية نصب واحتيال!</h2>
+            <p>كدت أن تقع في فخ عملية نصب!</p>
+            <p>الجوائز الحقيقية لا تطلب:</p>
+            <ul style="text-align: right;">
+                <li>كلمة المرور الخاصة بك</li>
+                <li>معلومات بطاقة الائتمان</li>
+                <li>تفاصيل شخصية مثل عنوانك</li>
+            </ul>
+            <p>تذكر: إذا كان العرض يبدو جيدًا لدرجة يصعب تصديقها، فغالبًا ما يكون كذلك!</p>
+            <button class="btn">فهمت!</button>
+        </div>
+    </div>
+    
+    <!-- Modal: Fake Virus Scan -->
+    <div class="virus-scan" id="virusScan">
+        <div style="font-size: 24px; margin-bottom: 20px;">🔍 جاري فحص النظام</div>
+        <div class="scan-message">جارٍ فحص ملفات C:\Program...</div>
+        <div class="infected-file">مصاب: trojan.exe</div>
+        <div class="infected-file">مصاب: keylogger.dll</div>
+        <div class="scan-message">هناك 3 تهديدات خطيرة على جهازك!</div>
+        <div class="scan-progress">
+            <div class="scan-progress-bar" id="scanProgressBar"></div>
+        </div>
+        <div class="scan-message">لا تغلق هذه النافذة! جاري التنظيف...</div>
+        <button class="btn btn-danger" style="margin-top: 30px;" id="closeVirusScan">لقد تعلمت الدرس</button>
+    </div>
+    
+    <!-- Modal: Stranger Danger -->
+    <div class="modal" id="strangerModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>👤 خطر الغرباء!</h2>
+            <p>لقد نقرت على طلب دردشة من شخص لا تعرفه!</p>
+            <p>تذكر قواعد السلامة هذه:</p>
+            <ol style="text-align: right;">
+                <li>لا تتحدث أبدًا مع غرباء على الإنترنت</li>
+                <li>لا تشارك المعلومات الشخصية</li>
+                <li>إذا جعلك أحدهم تشعر بعدم الارتياح، قم بحظره والإبلاغ عنه</li>
+            </ol>
+            <button class="btn">ابقَ آمنًا!</button>
+        </div>
+    </div>
+    
+    <!-- Modal: Success Screen -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <h2>🎉 أنت خبير في أمان الإنترنت!</h2>
+            <p>لقد اكتشفت بنجاح جميع المخاطر على الإنترنت!</p>
+            <p><strong>تذكر هذه القواعد الأساسية:</strong></p>
+            <ul style="text-align: right;">
+                <li>لا تقم أبدًا بتحميل برامج "مجانية" من مواقع مشبوهة</li>
+                <li>ابحث دائمًا عن HTTPS (🔒) قبل تسجيل الدخول</li>
+                <li>لا تشارك معلومات شخصية للحصول على "جوائز"</li>
+                <li>قم بحظر والإبلاغ عن المتنمرين الإلكترونيين</li>
+                <li>لا تتحدث مع غرباء على الإنترنت</li>
+            </ul>
+            <button class="btn btn-success">فهمت!</button>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>GameHub</h3>
+                <ul>
+                    <li><a href="#">معلومات عنا</a></li>
+                    <li><a href="#">وظائف</a></li>
+                    <li><a href="#">البيانات الصحفية</a></li>
+                    <li><a href="#">المدونة</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>مساعدة</h3>
+                <ul>
+                    <li><a href="#">مركز المساعدة</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">شروط الخدمة</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>تابعنا</h3>
+                <ul>
+                    <li><a href="#">فيسبوك</a></li>
+                    <li><a href="#">تويتر</a></li>
+                    <li><a href="#">إنستغرام</a></li>
+                    <li><a href="#">يوتيوب</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container copyright">
+            © 2023 GameHub. جميع الحقوق محفوظة. | هذا موقع تعليمي وهمي للتوعية بأمان الإنترنت.
+        </div>
+    </footer>
+    
+    <script>
+        // List of all traps with their details
+        const traps = [
+            { id: 'mainCta', name: 'زر الاشتراك الرئيسي (فخ التصيد)', found: false },
+            { id: 'robuxOffer', name: 'تعديل لعبة مجاني (برامج ضارة)', found: false },
+            { id: 'iphoneOffer', name: 'مسابقة لعبة (احتيال)', found: false },
+            { id: 'minecraftOffer', name: 'تعديل لعبة (فيروس)', found: false },
+            { id: 'giftcardOffer', name: 'مولد بطاقات هدايا (نصب)', found: false },
+            { id: 'vpnOffer', name: 'VPN مجاني (سرقة بيانات)', found: false },
+            { id: 'cheatOffer', name: 'هاك لعبة (برامج ضارة)', found: false },
+            { id: 'loginSection', name: 'تسجيل الدخول غير الآمن', found: false },
+            { id: 'badComment', name: 'تنمر إلكتروني', found: false },
+            { id: 'fakeNotification', name: 'إشعار فيروسات مزيف', found: false },
+            { id: 'chatRequest', name: 'طلب دردشة من غريب', found: false },
+            { id: 'malwareAd', name: 'إعلان برامج ضارة', found: false },
+            { id: 'friendRequest', name: 'طلب صداقة من غريب', found: false }
+        ];
+        
+        // Update trap tracker
+        function updateTrapTracker() {
+            const foundCount = traps.filter(trap => trap.found).length;
+            document.getElementById('foundTraps').textContent = foundCount;
+            
+            const trapList = document.getElementById('trapList');
+            trapList.innerHTML = '';
+            
+            traps.forEach(trap => {
+                if (trap.found) {
+                    const trapElement = document.createElement('div');
+                    trapElement.innerHTML = `✓ <span class="trap-found">${trap.name}</span>`;
+                    trapList.appendChild(trapElement);
+                }
+            });
+            
+            // Show success modal if all traps found
+            if (foundCount === traps.length) {
+                setTimeout(() => {
+                    document.getElementById('successModal').style.display = 'flex';
+                    document.body.classList.add('locked');
+                }, 1000);
+            }
+        }
+        
+        // Mark trap as found
+        function markTrapAsFound(trapId) {
+            const trap = traps.find(t => t.id === trapId);
+            if (trap && !trap.found) {
+                trap.found = true;
+                updateTrapTracker();
+                
+                // Highlight the trap element
+                const trapElement = document.getElementById(trapId);
+                if (trapElement) {
+                    trapElement.style.boxShadow = '0 0 0 3px #00b894';
+                    trapElement.style.transition = 'box-shadow 0.5s';
+                }
+            }
+        }
+        
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up all the traps
+            
+            // Main CTA button
+            document.getElementById('mainCta').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPhishingModal();
+                markTrapAsFound('mainCta');
+            });
+            
+            // Robux generator
+            document.getElementById('robuxOffer').addEventListener('click', function() {
+                showVirusModal();
+                markTrapAsFound('robuxOffer');
+            });
+            
+            // iPhone giveaway
+            document.getElementById('iphoneOffer').addEventListener('click', function() {
+                showPhishingModal();
+                markTrapAsFound('iphoneOffer');
+            });
+            
+            // Minecraft mod
+            document.getElementById('minecraftOffer').addEventListener('click', function() {
+                startVirusScan();
+                markTrapAsFound('minecraftOffer');
+            });
+            
+            // Gift card generator
+            document.getElementById('giftcardOffer').addEventListener('click', function() {
+                showVirusModal();
+                markTrapAsFound('giftcardOffer');
+            });
+            
+            // VPN offer
+            document.getElementById('vpnOffer').addEventListener('click', function() {
+                showVirusModal();
+                markTrapAsFound('vpnOffer');
+            });
+            
+            // Game cheat
+            document.getElementById('cheatOffer').addEventListener('click', function() {
+                startVirusScan();
+                markTrapAsFound('cheatOffer');
+            });
+            
+            // Login form
+            document.getElementById('loginBtn').addEventListener('click', function() {
+                showPasswordModal();
+                markTrapAsFound('loginSection');
+            });
+            
+            // Bad comment
+            document.getElementById('badComment').addEventListener('click', function() {
+                showStrangerModal();
+                markTrapAsFound('badComment');
+            });
+            
+            // Fake notification (appears after 10 seconds)
+            setTimeout(function() {
+                document.getElementById('fakeNotification').style.display = 'block';
+                document.getElementById('fakeNotification').addEventListener('click', function() {
+                    startVirusScan();
+                    markTrapAsFound('fakeNotification');
+                });
+                
+                // Close button for notification
+                document.querySelector('.fake-notification-close').addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    document.getElementById('fakeNotification').style.display = 'none';
+                });
+            }, 10000);
+            
+            // Fake chat request (appears after 15 seconds)
+            setTimeout(function() {
+                document.getElementById('chatRequest').style.display = 'block';
+                document.getElementById('chatRequest').addEventListener('click', function() {
+                    showStrangerModal();
+                    markTrapAsFound('chatRequest');
+                });
+            }, 15000);
+            
+            // Fake malware ad (appears after 20 seconds)
+            setTimeout(function() {
+                document.getElementById('malwareAd').style.display = 'block';
+                document.getElementById('malwareAd').addEventListener('click', function() {
+                    startVirusScan();
+                    markTrapAsFound('malwareAd');
+                });
+            }, 20000);
+            
+            // Fake friend request (appears after 25 seconds)
+            setTimeout(function() {
+                document.getElementById('friendRequest').style.display = 'block';
+                document.getElementById('friendRequest').addEventListener('click', function() {
+                    showStrangerModal();
+                    markTrapAsFound('friendRequest');
+                });
+            }, 25000);
+            
+            // Modal close buttons
+            document.querySelectorAll('.modal-close').forEach(function(closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    this.closest('.modal').style.display = 'none';
+                    document.body.classList.remove('locked');
+                });
+            });
+            
+            // Virus scan close button
+            document.getElementById('closeVirusScan').addEventListener('click', function() {
+                document.getElementById('virusScan').style.display = 'none';
+                document.body.classList.remove('locked');
+            });
+            
+            // Fix virus button
+            document.getElementById('fixVirusBtn').addEventListener('click', function() {
+                document.getElementById('virusModal').style.display = 'none';
+                startVirusScan();
+            });
+        });
+        
+        function showVirusModal() {
+            document.getElementById('virusModal').style.display = 'flex';
+            document.body.classList.add('locked');
+            
+            // Animate progress bar
+            let progress = 0;
+            const virusProgress = document.getElementById('virusProgress');
+            const interval = setInterval(function() {
+                progress += 5;
+                virusProgress.style.width = progress + '%';
+                if (progress >= 100) clearInterval(interval);
+            }, 100);
+        }
+        
+        function showPasswordModal() {
+            document.getElementById('passwordModal').style.display = 'flex';
+            document.body.classList.add('locked');
+        }
+        
+        function showPhishingModal() {
+            document.getElementById('phishingModal').style.display = 'flex';
+            document.body.classList.add('locked');
+        }
+        
+        function showStrangerModal() {
+            document.getElementById('strangerModal').style.display = 'flex';
+            document.body.classList.add('locked');
+        }
+        
+        function startVirusScan() {
+            document.getElementById('virusScan').style.display = 'flex';
+            document.body.classList.add('locked');
+            
+            // Animate scan progress
+            let progress = 0;
+            const scanProgressBar = document.getElementById('scanProgressBar');
+            const interval = setInterval(function() {
+                progress += 2;
+                scanProgressBar.style.width = progress + '%';
+                if (progress >= 100) clearInterval(interval);
+            }, 100);
+        }
+    </script>
+</body>
+</html>
